@@ -13,7 +13,7 @@ public class Ventana extends JFrame{
 
 	public Ventana() {
 		
-	this.setSize(600,600);
+	this.setSize(594,591);
 	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	this.setTitle("Laberinto");
 	this.setLocationRelativeTo(null);

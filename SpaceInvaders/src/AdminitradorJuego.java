@@ -10,28 +10,30 @@ import javax.swing.JPanel;
 public class AdminitradorJuego extends JPanel implements Runnable{
 	
 	//CONFIGURACIONES DE PANTALLA
-		final int escalaOriginal = 16; //16x16 CUADROS
-		final int escala = 3;
+		final int escalaOriginal = 5;
+		final int escala = 5;
 		
-		public final int tamPantalla = escalaOriginal * escala; //48x48 CUADROS
-		public final int maxColPantalla = 16;
-		public final int maxFilPantalla = 12;
+		public final int tamPantalla = escalaOriginal * escala; //25x25 CUADROS
+		public final int maxColPantalla = 20;
+		public final int maxFilPantalla = 20;
 		public final int anchoPantalla = tamPantalla * maxColPantalla; // 768 PIXELES
 		public final int alturaPantalla = tamPantalla * maxFilPantalla; // 576 PIXELES
 	
 	
 	int FPS = 60;
 	
+	
+	ControladorTile ControladorT = new ControladorTile(this);
 	Controles teclas = new Controles();
 	Thread hiloJuego;
 	
-	int jugadorX = 10;
-	int jugadorY = 350;
+	int jugadorX = 25;
+	int jugadorY = 25;
 	int velocidad = 5;
 	
 	public AdminitradorJuego() {
 		
-		this.setBackground(Color.black);
+		this.setBackground(Color.LIGHT_GRAY);
 		this.setDoubleBuffered(true);
 		this.addKeyListener(teclas);
 		this.setFocusable(true);
@@ -107,8 +109,9 @@ public class AdminitradorJuego extends JPanel implements Runnable{
 		
 		Graphics2D g2 = (Graphics2D)g;
 		
-		g2.setColor(Color.white);
+		ControladorT.dibujar(g2);
 		
+		g2.setColor(Color.white);
 		g2.fillRect(jugadorX, jugadorY, tamPantalla, tamPantalla);
 		
 		g2.dispose();

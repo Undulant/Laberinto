@@ -18,7 +18,6 @@ public class Controles implements KeyListener{
 		int code = e.getKeyCode();
 		
 		if(code ==  KeyEvent.VK_W) {
-			System.out.print(code);
 			arriba = true;
 		}
 		if(code == KeyEvent.VK_S) {
