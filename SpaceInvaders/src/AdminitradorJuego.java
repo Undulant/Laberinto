@@ -14,10 +14,10 @@ public class AdminitradorJuego extends JPanel implements Runnable{
 		final int escala = 5;
 		
 		public final int tamPantalla = escalaOriginal * escala; //25x25 CUADROS
-		public final int maxColPantalla = 20;
+		public final int maxColPantalla = 40;
 		public final int maxFilPantalla = 20;
-		public final int anchoPantalla = tamPantalla * maxColPantalla; // 768 PIXELES
-		public final int alturaPantalla = tamPantalla * maxFilPantalla; // 576 PIXELES
+		public final int anchoPantalla = tamPantalla * maxColPantalla; // 750 PIXELES
+		public final int alturaPantalla = tamPantalla * maxFilPantalla; // 500 PIXELES
 	
 	
 	int FPS = 60;
@@ -112,7 +112,7 @@ public class AdminitradorJuego extends JPanel implements Runnable{
 		ControladorT.dibujar(g2);
 		
 		g2.setColor(Color.white);
-		g2.fillRect(jugadorX, jugadorY, tamPantalla, tamPantalla);
+		g2.fillRect(jugadorX, jugadorY, tamPantalla-5, tamPantalla-5);
 		
 		g2.dispose();
 	}
