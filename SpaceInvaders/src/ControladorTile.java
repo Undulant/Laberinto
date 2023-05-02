@@ -9,8 +9,8 @@ import javax.imageio.ImageIO;
 public class ControladorTile {
 	
 	AdminitradorJuego aj;
-	Tile[] tile;
-	int numTileMap[][];
+	public Tile[] tile;
+	public int numTileMap[][];
 
 	
 	public ControladorTile(AdminitradorJuego aj) {
@@ -30,9 +30,13 @@ public class ControladorTile {
 			
 			tile[0] = new Tile();
 			tile[0].imagen = ImageIO.read(getClass().getResourceAsStream("/tiles/Calle.png"));
+			tile[0].colision = true;
 			
 			tile[1] = new Tile();
 			tile[1].imagen = ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra.png"));
+			
+			tile[2] = new Tile();
+			tile[2].imagen = ImageIO.read(getClass().getResourceAsStream("/tiles/Meta.png"));
 			
 		}catch(IOException e) {
 			e.printStackTrace();

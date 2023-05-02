@@ -26,10 +26,9 @@ public class AdminitradorJuego extends JPanel implements Runnable{
 	ControladorTile ControladorT = new ControladorTile(this);
 	Controles teclas = new Controles();
 	Thread hiloJuego;
+	public Colision cColision = new Colision(this);
+	Jugador jugador = new Jugador(this, teclas);
 	
-	int jugadorX = 25;
-	int jugadorY = 25;
-	int velocidad = 5;
 	
 	public AdminitradorJuego() {
 		
@@ -87,19 +86,7 @@ public class AdminitradorJuego extends JPanel implements Runnable{
 	
 	public void actualizar() {
 		
-		
-		if(teclas.arriba == true) {
-			jugadorY -= velocidad;
-		}
-		else if(teclas.abajo == true) {
-			jugadorY += velocidad;
-		}
-		else if(teclas.izqui == true) {
-			jugadorX -= velocidad;
-		}
-		else if(teclas.dere == true) {
-			jugadorX += velocidad;
-		}
+		jugador.actualizar();
 		
 	}
 	
@@ -111,8 +98,7 @@ public class AdminitradorJuego extends JPanel implements Runnable{
 		
 		ControladorT.dibujar(g2);
 		
-		g2.setColor(Color.white);
-		g2.fillRect(jugadorX, jugadorY, tamPantalla-5, tamPantalla-5);
+		jugador.dibujar(g2);
 		
 		g2.dispose();
 	}
